@@ -1,5 +1,11 @@
 FROM alpine:3.5
 
+ARG DOCKER_IMAGE_NAME
+ARG DOCKER_IMAGE_TAG
+
+ENV DOCKER_IMAGE_NAME ${DOCKER_IMAGE_NAME:-UnknownName}
+ENV DOCKER_IMAGE_TAG ${DOCKER_IMAGE_TAG:-UnknownRevision}
+
 # Install dependencies
 RUN apk add --no-cache php7-session php7-mysqli php7-mbstring php7-xml php7-gd php7-zlib php7-bz2 php7-zip php7-openssl php7-curl php7-opcache php7-json nginx php7-fpm supervisor
 
